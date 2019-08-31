@@ -8,4 +8,13 @@ class UsersController < ApplicationController
     erb :'users/login'
   end 
 
+  post '/signup' do 
+    if params[:email] == "" || params[:password] == ""
+      redirect '/signup'
+    else 
+      User.create(email: params[:email], first_name: params[:first_name], household_name: params[:household_name], password: params[:password])
+      redirect '/login' 
+    end 
+  end 
+
 end 
