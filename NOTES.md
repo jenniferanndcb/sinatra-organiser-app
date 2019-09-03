@@ -1,12 +1,13 @@
  - create login form/view - DONE 
  - create signup form/view - DONE
  - implement user authentication - DONE 
- - create migrations - 
+ - create migrations - DONE
     - create_user table: 
       - email
       - first_name
       - household_name
       - shared_password 
+ - establish connection view page for user homepage if logged in
     - create_events table: 
       - Description 
       - Attendee
@@ -14,9 +15,10 @@
       - Datefrom 
       - Dateto
       - Time 
+      - belongs to :user 
     - create user_event table: 
       - event primary key 
       - user primary key 
- - create user/index view - user can add family members, create events, create lists(groceries/todo) and can assign list to other family members
+ - create details user/index view - user can add family members, create events, create lists(groceries/todo) and can assign list to other family members
  - create events form (Description, who ~ radio button with family members, from/to dates and time)
  - create events view 

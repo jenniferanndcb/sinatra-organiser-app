@@ -6,6 +6,6 @@ end
 
 use Rack::MethodOverride
 
-# use EventsController
+use EventsController
 use UsersController
 run ApplicationController
