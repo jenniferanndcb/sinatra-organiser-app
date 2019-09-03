@@ -12,29 +12,31 @@ class UsersController < ApplicationController
     if params[:email] == "" || params[:password] == ""
       redirect '/signup'
     else 
-      User.create(email: params[:email], first_name: params[:first_name], household_name: params[:household_name], password: params[:password])
-      redirect '/login' 
+      @user = User.new(email: params[:email], first_name: params[:first_name], household_name: params[:household_name], password: params[:password])
+      @user.save 
+      session[:user_id] = @user.id
+      redirect '/users/home' 
     end 
   end 
 
   post '/login' do 
-    # user = User.find_by(email: params[:email])
-
-    # if user && user.authenticate(params[:password])
-    #   session[:user_id] = user.id
-
-      user = User.find_by(email: params[:email])
-      
-      if user && user.authenticate(params[:password])
-        session[:user_id] = user.id 
-      
-      redirect '/events'
-     
-      # redirect '/events'
-    # else
-    #   redirect '/login'
-    end
    
+   user = User.find_by_email(params[:email])
+  #binding.pry
+    if user
+       
+      session[:user_id] = user.id 
+     
+      redirect '/users/home'
+    else
+      redirect '/login'
+   
+    end
+  end 
+
+  get '/users/home' do 
+    @user = User.find(session[:user_id])
+    erb :'/events/index'
   end 
 
 end 

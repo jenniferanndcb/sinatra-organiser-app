@@ -7,7 +7,7 @@
       - first_name
       - household_name
       - shared_password 
- - establish connection view page for user homepage if logged in
+ - establish connection view page for user homepage if logged in - HAVING PROBLEMS USING .authenticate method
     - create_events table: 
       - Description 
       - Attendee

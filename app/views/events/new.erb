@@ -1,0 +1,23 @@
+<h1>Create a New Event</h1>
+
+<form action='/events' method='post'>
+<label for='description'>Description:</label>
+  <input type='text' name='description'>
+<br><br>
+<label for='attendee'>Attendee:</label>
+  <input type='checkbox' label= 'familymember1' name='attendee'>
+    <label for='familymember1'>Family Member 1</label>
+  <input type='checkbox' label= 'familymember2' name='attendee'>
+    <label for='familymember1'>Family Member 1</label>
+<br><br>
+<label for='datefrom'>From:</label>
+  <input type='date' name='date_from'>
+<br><br>
+<label for='dateto'>To:</label>
+  <input type='date' name='date_to'>
+<br><br>
+<label for='time'>Time:</label>
+  <input type='time' name='time'>
+<br><br>
+<input type='submit' value='Create Event'>
+</form>
