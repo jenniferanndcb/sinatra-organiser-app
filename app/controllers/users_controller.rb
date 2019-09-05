@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end 
 
   get '/login' do 
-    erb :'users/login'
+    if !logged_in? 
+      erb :'users/login'
+    else 
+      redirect '/users/home'
+    end 
   end 
 
   post '/signup' do 
@@ -22,7 +26,7 @@ class UsersController < ApplicationController
   post '/login' do 
    
    user = User.find_by_email(params[:email])
-  #binding.pry
+  
     if user
        
       session[:user_id] = user.id 

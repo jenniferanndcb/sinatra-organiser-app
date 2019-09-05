@@ -5,6 +5,7 @@ class CreateUser < ActiveRecord::Migration
       t.string :first_name 
       t.string :household_name 
       t.string :password_digest
+      t.belongs_to :household 
     end 
   end
 end

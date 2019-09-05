@@ -7,6 +7,7 @@
       - first_name
       - household_name
       - shared_password 
+      - belongs_to household
  - establish connection view page for user homepage if logged in - connection works but HAVING PROBLEMS USING .authenticate method so currently not using this method
     - create_events table - DONE
       - Description 
@@ -16,7 +17,7 @@
       - Dateto
       - Time 
       - belongs to :user 
-    - DO I NEED A HOUSEHOLD MODEL/TABLE???? 
+    - DO I NEED A HOUSEHOLD MODEL/TABLE???? CREATED
     - create user_event table: 
       - event primary key 
       - user primary key 

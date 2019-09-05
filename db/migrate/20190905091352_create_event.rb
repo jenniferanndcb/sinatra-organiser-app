@@ -8,6 +8,6 @@ class CreateEvent < ActiveRecord::Migration
       t.time :time
       t.timestamp 
       t.belongs_to :user 
-    end 
+    end
   end
 end
