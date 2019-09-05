@@ -8,9 +8,23 @@ Welcome <%=@user.first_name%>!!
 <h3> Today is <%=Date.today%></h3>
 
 <%@user.events.each do |event|%>
-    <li><%=event.description%></li>
-    <li>Due in: <%=event.date_to%></li>
-  <%end%>
+            <td><%=event.description%></>
+          <%end%>
+
+<table border="1">
+  <thead><tr>
+    <td><%=@user.each %></td>
+    <td>another user</td>
+  </tr></thead>
+  <tbody>
+  <tr>
+    <% @user.events.each do |event|%>
+      <td><%=event.description%></td>
+      <%end%>
+  </tr>
+  </tbody>
+</table>
+
 
 
 <a href='/events/new'>Create a new Event</a>
