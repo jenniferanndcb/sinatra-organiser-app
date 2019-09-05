@@ -15,16 +15,23 @@ class ApplicationController < Sinatra::Base
     else 
       redirect '/users/home'
     end 
-  end
+  end 
+
+  
 
   helpers do 
     def logged_in? 
-      !!current_user
+      !!session[:user_id]
     end 
 
     def current_user 
-      @current_user ||= User.find_by(email: params[:email])
+      User.find(session[:user_id])
     end
+
+    def logout! 
+      session.clear 
+      redirect '/login'
+    end 
 
   end 
 

@@ -43,4 +43,8 @@ class UsersController < ApplicationController
     erb :'/events/index'
   end 
 
+  get '/logout' do 
+    logout!
+  end 
+
 end 

@@ -1,10 +1,15 @@
+
+
 Welcome <%=@user.first_name%>!!
 <br><br>
 
-<h2>Here are all your Events</h2>
+<h2>Here are all your Events this month</h2>
+
+<h3> Today is <%=Date.today%></h3>
 
 <%@user.events.each do |event|%>
-  <li><%=event.description%></li>
+    <li><%=event.description%></li>
+    <li>Due in: <%=event.date_to%></li>
   <%end%>
 
 
